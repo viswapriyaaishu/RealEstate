@@ -1,0 +1,49 @@
+.profileup{
+    display:flex;
+    height:calc(100vh - 100px);
+    .signlcon1{
+        flex:3;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:15px;
+    height:100%;
+
+    .signup1heading{
+         font-weight: 550;
+            font-size:27px;
+    }
+    div{
+        display:flex;
+        flex-direction: column;
+        gap:15px;
+        input{
+            height:6vh;
+            width:12vw;
+        }
+    }
+    button{
+            height:6vh;
+            background-color: teal;
+            width:12vw;
+        }
+    }
+    .signrcon1{
+        flex:2;
+    display:flex;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap:6px;
+    align-items: center;
+    background-color: #fcf5f3;
+    justify-content: center;
+    img{
+        height:300px;
+        border-radius: 45%;
+        object-fit: cover;
+       
+    }
+}
+}

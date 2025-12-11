@@ -1,0 +1,121 @@
+@import "../../index.scss";
+.cardcon{
+    width:100%;
+    display: flex;
+    
+   
+    @include sm{
+        flex-direction: column;
+        
+        gap:5px;
+    }
+
+    .cardimg{
+        flex:2;
+        
+        @include sm{
+            display:flex;
+            align-items: center;
+            width:100%;
+            padding-left:20px;
+            
+        }
+        img{
+            width:100%;
+            height:100%;
+            border-radius:5px;
+            object-fit:cover;
+            @include sm{
+                height:220px;
+                
+              
+            }
+        }
+    }
+    .carddesc{
+        flex:3;
+
+        .carddescwrap{
+            padding-left:20px;
+            display: flex;
+            flex-direction: column;
+            gap:15px;
+
+           .cardtitle{
+                font-size:20px;
+                font-weight:600;
+                color:#444;
+                transition:all 0.4s ease;
+
+                &:hover{
+                    scale:1.01;
+                    color:black;
+                }
+            }
+            .cardloc{
+                display:flex;
+                gap:5px;
+                align-items: center;
+
+                font-size:14px;
+                color:#888;
+                :nth-child(1){
+                    height:20px;
+                    width:20px;
+                    
+                }
+                
+            }
+
+            .cardsubs{
+                display:flex;
+                justify-content:space-between;
+                div{
+                    display:flex;
+                    gap:5px;
+ 
+                }
+
+                :nth-child(1){
+                    display:flex;
+                justify-content:space-between;
+                    div{
+                        display:flex;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-size:14px;
+                        padding:5px;
+                    }
+                    :nth-child(1){
+                        font-size:14px;
+                    }
+                }
+
+                :last-child{
+                    display:flex;
+                    gap:15px;
+                    .chaticons{
+                   
+                    display:flex;
+                    gap:10px;
+                    align-items: center;
+                    padding:3px;
+                    border:1px solid #999;
+                   border-radius: 5px;
+                    &:hover{
+                        background-color: lightgray;
+                    }
+                }
+                }
+            }
+
+            :nth-child(3){
+                font-size:20px;
+                width:max-content;
+                padding:10px;
+                font-weight: 300;
+                background-color: rgba(254,205,81,0.438);
+            }
+        }
+    }
+}

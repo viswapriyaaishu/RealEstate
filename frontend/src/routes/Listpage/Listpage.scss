@@ -1,0 +1,106 @@
+@import "../../index.scss";
+.listcon{
+    display:flex;
+    height:calc(100vh - 100px);
+    width:100%;
+    
+    @include sm{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+    }
+
+    .listleftcon{
+        flex:3;
+        height:100%;
+        
+
+
+        .leftconwrap{
+           
+            padding-right:50px;
+            padding-bottom:20px;
+            height:100%;
+
+            
+
+            .searchparams{
+                display:flex;
+                flex-direction:column;
+                height:100%;
+                
+                .loc{
+                    display:flex;
+
+                    flex-direction: column;
+                    
+                    input{
+                        height:4vh;
+                    }
+                }
+                .searchheading{
+                    font-size:22px;
+                    color: gray;
+                }
+                .searchfields{
+                    display:flex;
+                    
+                    gap:20px;
+                    margin-top: 4px;
+
+                    @include sm{
+                        flex-wrap: wrap;
+                    }
+                    
+                    .type,.property,.minprice,.maxprice,.bedroom{
+                        display:flex;
+                        flex-direction: column;
+                        
+                    input{
+                        width:100px;
+                        height:4vh;
+
+                        @include lg{
+                            width:75px;
+                        }
+                    }
+                    select{
+                        height:4vh;
+                        width:100px;
+                        color:black;
+                         @include lg{
+                            width:75px;
+                        }
+                        option{
+                            background-color:gray;
+                        color:white;
+
+                        }
+                    }
+                    button{
+                        background-color: #fece51;
+                        margin-top:15px;
+                        padding:4px 20px;
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    }
+                }
+                .listits{
+                    margin-top:40px;
+                    overflow-y: scroll;
+                    display:flex;
+                    flex-direction: column;
+                    gap:50px;
+                }
+            }
+        }
+    }
+    .listrightcon{
+        flex:2;
+        background-color: #fcf5f3;
+        height:100%;
+        
+    }
+}

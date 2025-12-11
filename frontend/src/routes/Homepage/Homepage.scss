@@ -1,0 +1,72 @@
+@import "../../../src/index.scss"; 
+
+.homecon{
+    display:flex;
+    width:100%;
+    height: 100%;
+    
+    .textcon{
+       
+         flex:3;
+        
+        @include md{
+            padding-right:0px;
+        }
+        .textwrap
+      {
+       
+        display:flex;
+        padding-top:4rem;
+      justify-content: center;
+       flex-direction: column;
+        gap:2rem;
+       
+        font-size:36px;
+        h1{
+            
+            font-weight:500;
+            @include lg{
+                font-size:45px;
+            }
+           
+        }
+        p{
+        width: 100%;
+        font-size: 25px;
+
+        @include lg{
+            font-size:22px;
+        }
+        @include md{
+            font-size:21px;
+        }
+        @include sm{
+            font-size:19px;
+        }
+        
+       }
+
+
+    }
+
+    }
+
+    .homeimgcon{
+        background-color: aquamarine;
+        flex:2;
+        height:100%;
+        position:relative;
+         @include md{
+            display:none;
+        
+        
+        }
+        img{
+            width:100%;
+            position:absolute;
+            right:0px;
+            
+        }
+        background-color: #fcf5f3;
+    }
+}

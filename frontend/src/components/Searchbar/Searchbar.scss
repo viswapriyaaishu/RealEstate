@@ -1,0 +1,112 @@
+@import "../../../src/index.scss";
+.searchcomp{
+    margin-top:20px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+
+
+    .btns{
+        :nth-child(1){
+          border-top-left-radius: 5px;
+          border:1px solid gray;
+          border-right:none;
+          border-bottom:none;
+            
+        }
+
+          :nth-child(2){border-top-right-radius:5px;
+        border:1px solid gray;
+    border-left:none;
+border-bottom:none;}
+        button{
+          padding:16px 36px;
+          
+    
+          
+          &.activeb{
+            background-color: black;
+            color:white;
+          }
+        
+    }}
+    .searchip{
+        display:flex;
+        
+        height:8vh;
+        input{
+        width:200px;
+
+         @include lg{
+        :nth-child(2),:nth-child(3){
+            width:140px;
+        }}
+       @include sm{
+        width:100%;
+        height:8vh;
+       
+       }
+       
+       }
+       
+         @include sm{
+            
+            flex-direction:column;
+            width:100%;
+            gap:3px;
+           height:max-content;
+           
+           
+        }
+        
+        
+        button{
+            background-color: #fece51;
+            height:8vh;
+            width:100px;
+            @include sm{
+                width:100%;
+            }
+        }
+    }
+    .searchtext{
+        
+        display:flex;
+        @include md{
+            margin-top:18px;
+        }
+       
+        padding-right:25px;
+        
+        justify-content: space-between;
+
+        .yrs,.awards,.property{
+            display:flex;
+            flex-direction: column;
+
+            :nth-child(1){
+                font-size:28px;
+                font-weight:bold;
+                margin-top:10px;
+                @include sm{
+                    display:none;
+                }
+            }
+            :nth-child(2){
+                font-size:22px;
+                @include lg{
+            font-size:20px;
+            
+        }
+        @include md{
+            font-size:24px;
+        }
+        @include sm{
+            display: none;
+        }
+            }
+        }
+        
+       
+    }
+}

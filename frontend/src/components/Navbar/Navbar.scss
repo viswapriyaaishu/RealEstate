@@ -1,0 +1,234 @@
+@import "../../../src/index.scss";
+
+.nav{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+   
+    a{
+        transition:all 0.4s ease;
+
+   
+
+   &.navsub{
+
+   
+    @include sm{
+        display:none;
+    }
+   }
+   }
+    }
+    .leftnav{
+        height:100%;
+        flex:3;
+        display:flex;
+        align-items:center;
+        gap:50px;
+    
+       
+
+        .logo{
+            img{
+                height:28px;
+            }
+
+            display:flex;
+            align-items:center;
+            gap:10px;
+            div{
+               
+                @include md{
+                    display:none;
+                }
+                 @include sm{
+                    display:initial;
+                }
+                
+            }
+        }
+        .navsub{
+             &:hover{
+        scale:1.05;
+    }
+        }
+        font-size: 20px;
+
+        .mode{
+            height:60px;
+            width:60px;
+            &.lmode{
+            
+            background-color: orange;
+           
+        }
+        &.dmode{
+            background-color: black;
+           
+        }
+        }
+        .sys{
+            height:60px;
+            width:60px;
+            &.sysip{
+            background-color:navy;
+            
+        }
+        &.nsysip{
+            background-color: blue;
+            
+        }
+        }
+        
+    }
+    .rightnav{
+        display:flex;
+        flex:2;
+        align-items: center;
+        height:100%;
+       
+        background-color: #fcf5f3;
+        @include md{
+            background-color: transparent;
+        }
+        height: 100%;
+        justify-content: flex-end;
+
+        .user{
+            display:flex;
+            gap:50px;
+            align-items: center;
+            font-size: 18px;
+
+           
+            > :nth-child(1){
+                padding-right: 15px;
+                display:flex;
+            gap:50px;
+            align-items: center;
+             @include md{
+                gap:40px;
+              padding-left: 10px;
+            }
+               .profileimg{
+                width:44px;
+                height:44px;
+                border-radius:50%;
+
+                @include md{
+                    width:50px;
+                height:50px;
+                }
+            }
+            .profilenav{
+                
+                display: flex;
+                align-items: center;
+                background-color: #fece51;
+                padding: 10px 24px;
+                height:60px;
+                position: relative;
+               
+
+                .notificationno{
+                    position: absolute;
+                    top:-3px;
+                    right:-3px;
+                    background-color: rgba(255, 0, 0, 0.749);
+                    width: fit-content;
+                    padding:4px 8px;
+                    border-radius: 50%;
+                }
+               
+            }
+            :nth-child(3){
+                padding:10px 24px;
+                display: flex;
+                align-items: center;
+                background-color: #fece51;
+                padding-right: 10px;
+            }
+            :nth-child(2),:nth-child(3){
+               
+                @include sm{
+                    display:none;
+                }
+            }
+            }
+        }
+        .signuplink{
+            background-color: #fece51;
+        }
+         .menuicon{
+           
+            display:none;
+            @include sm{
+                display:flex;
+                flex-direction: column;
+                 width:30px;
+            height:20px;
+            justify-content: space-between;
+            cursor: pointer;
+           z-index: 3;
+
+            }
+            div{
+                @include sm{
+                    height:4px;
+                width:100%;
+                background-color: blue;
+                border-radius:5px;
+                }
+            }
+        }
+
+        
+        a{
+            padding:12px 20px;
+            margin:20px;
+           
+            font-size:19px;
+             @include sm{
+                display:none;
+        }
+       
+        
+        }
+
+        .menu{
+            position:fixed;
+            top:0px;
+            right:-50%;
+            width:50%;
+            height: 100vh;
+            background-color:black;
+            z-index:2;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            
+            transition: all 1s ease;
+            color:white;
+
+            &.active{
+                right:0px;
+            }
+            .sidelinks{
+               
+                color:white;
+                
+                 
+
+                @include sm{
+                    display:flex;
+                }
+            }
+            gap:5px;
+           
+        
+            
+            }
+    }

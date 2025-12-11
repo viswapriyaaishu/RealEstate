@@ -1,0 +1,320 @@
+@import "../../index.scss";
+
+.profile{
+    display:flex;
+    height:calc(100vh - 100px);
+  
+    overflow-y: hidden;
+@include md{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    overflow-y: scroll;
+}
+    .profilelcon{
+        flex:3;
+        height:100%;
+        .profilelwrap{
+            padding-right:20px;
+            display:flex;
+            flex-direction:column;
+            height:100%;
+            gap:25px;
+             overflow-y:scroll;
+
+            .ptopcon{
+                
+                display:flex;
+                justify-content:space-between;
+
+
+                :nth-child(1){
+                    font-size:24px;
+                    font-weight:200;
+                    color:rgba(128, 128, 128, 0.915)
+                }
+                :nth-child(2){
+                    background-color: #fece51;
+                    padding:12px 24px;
+                }
+                .updpro{
+                    font-size: 16px;
+                    color: black;
+                }
+            }
+            .pmidcon{
+                
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+
+                :nth-child(1),:nth-child(2),:nth-child(3){
+                    display:flex;
+                    gap:3px;
+                }
+                :nth-child(1){
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width:40px;
+                        height:40px;
+                        border-radius: 50%;
+                    }
+                }
+                .logout{
+                    background-color: teal;
+                    cursor: pointer;
+                    padding:10px;
+                    display:flex;
+                    justify-content: center;
+                    width:100px;
+                    color:white;
+                    border-radius: 5px;
+                }
+            }
+
+            .probottomcon{
+                display:flex;
+                flex-direction: column;
+                
+                .mylist{
+              
+                display:flex;
+                flex-direction:column;
+               
+
+                 
+                
+                .listhead{
+                    display:flex;
+                    justify-content: space-between;
+                    :nth-child(1){
+                        font-size: 20px;
+                    }
+                    .createbtn{
+                    background-color: #fece51;
+                    padding:12px 20px;
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+                }
+                .mycards{
+                    
+                   
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap:20px;
+                    padding-bottom: 15px;
+            
+
+                    
+                    
+                    @include sm{
+                        height: 100%;
+                    }
+                   
+                    .profilelistcard{
+                        
+                            .cardimg{
+                                @include sm{
+                                    display:none;
+                                }
+                            }
+                        
+                    }
+                }
+            }
+
+            .savedlist{
+                display:flex;
+                flex-direction: column;
+                gap:15px;
+
+                
+                :nth-child(1){
+                    font-size: 20px;
+                }
+                .mycards{
+                    display: flex;
+                    flex-direction: column;
+                    gap:20px;
+                    padding-bottom: 15px;
+                    @include lg{
+                        height:45vh;
+                    }
+                    @include md{
+                        height:40vh;
+                    }
+                    @include sm{
+                        height: 100%;
+                    }
+                }
+            }
+            }
+        }
+    }
+    .profilercon{
+        flex:2;
+        height:100%;
+        background-color: #fcf5f3;
+        display: flex;
+        flex-direction: column;
+.profilerwrap{
+    padding: 10px;
+    
+        .msgscon{
+          
+            display: flex;
+            flex-direction: column;
+            gap:8px;
+            
+            height:40vh;
+            @include lg{
+                        height:42vh;
+                    }
+            @include md{
+                height:40vh;
+            }
+             @include sm{
+                height:68vh;
+            }
+           
+       > :first-child{
+                font-size: 20px;
+                padding-left:15px;
+                
+               
+            }
+        > :nth-child(2){
+               
+                
+                display: flex;
+            flex-direction: column;
+            gap:8px;
+            overflow-y:scroll;
+            
+
+            
+            .msgit{
+                display:flex;
+                background-color: white;
+                gap:10px;
+                padding:20px 15px;
+        
+                align-items: center;
+                &.active{
+                    background-color: #fecd5162;
+                }
+                &.nactive{
+                    background-color: white;
+                }
+                img{
+                    height: 40px;
+                    width:40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+            }
+        }
+
+        .chatcon{
+            
+            display:flex;
+            flex-direction: column;
+            height:48vh;
+            padding-bottom: 10px;
+            @include lg{
+                        height:42vh;
+                    }
+             @include md{
+                height:40vh;
+            }
+            @include sm{
+                height:45vh;
+            }
+              .chatprofilepar{
+            
+                display:flex;
+                
+                justify-content: space-between;
+                
+                padding-left:15px;
+                align-items: center;
+                 background-color: rgba(254,205,81,0.438);
+                padding-top:8px;
+                padding-bottom:8px;
+                padding-right: 5px;
+                .chatprofile{
+                    display:flex;
+                    gap:10px;
+                    align-items: center;
+                    img{
+                    height:40px;
+                    width:40px;
+                    border-radius:50%;
+                }
+                }
+                
+            }
+           .chatcon{
+                
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+                overflow-y:scroll;
+                
+                padding-bottom: 10px;
+                background-color: white;
+
+                 @include sm{
+                height: 42vh;
+            }
+                .own{
+                    margin-left:auto;
+                    padding-right:15px;
+                    display:flex;
+                    flex-direction: column;
+                    width:155px;
+                   .chatdate{
+                        margin-left: auto;
+                        background-color: #fecd5162;
+                    }
+                }
+                .other{
+                    margin-right:auto;
+                    padding-left:15px;
+                    display:flex;
+                    width:155px;
+                    flex-direction: column;
+                    .chatdate{
+                        margin-right: auto;
+                        background-color: #fecd5162;
+                        
+                    }
+                }
+            }
+            > :nth-child(3){
+                display:flex;
+                padding-bottom: 20px;
+                
+
+                > :nth-child(1){
+                    flex:4;
+                    height:6vh;
+                }
+                > :nth-child(2){
+                    flex:1;
+                    height:6vh;
+                    background-color: #fece51;
+                }
+            }
+        }
+}
+     
+
+        
+    }
+}

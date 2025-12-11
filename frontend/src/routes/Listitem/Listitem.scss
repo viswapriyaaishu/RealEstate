@@ -1,0 +1,349 @@
+@import "../../index.scss";
+.listitem{
+    display:flex;
+    height:calc(100vh - 100px);
+
+    @include md{
+        display: flex;
+        flex-direction: column;
+        gap:30px;
+        overflow: scroll;
+    }
+    
+    .listitemlcon{
+        height:100%;
+        flex:3;
+        
+
+        .listitemlconwrap{
+            padding-right: 50px;
+            display:flex;
+        flex-direction: column;
+    gap:30px;
+    height:100%;
+            
+            .listitemtop{
+                height:350px;
+                .slider{
+                    display:flex;
+                    height:100%;
+
+                    .fullslider{
+                        height:100vh;
+                        width:100vw;
+                        background-color: black;
+                        position: absolute;
+                        top:0px;
+                        left:0px;
+                        display:flex;
+                        justify-content: space-between;
+                        z-index:8;
+                        @include sm{
+                            gap:1px;
+                        }
+
+                        :nth-child(1),:nth-child(3){
+                            flex:1;
+                            display: flex;
+                            align-items: center;
+                            height:100%;
+                            color:white;
+                            cursor: pointer;
+                            z-index:9;
+
+                            
+                        }
+
+                        .imgcon{
+                            flex:10;
+                            width:100%;
+                            object-fit:cover;
+                            height:100%;
+                            display: flex;
+                            justify-content: center;
+                            @include sm{
+                                width:80px;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                
+
+                                img{
+                                    width:100%;
+                                    height:200px;
+                                }
+                            }
+                        }
+                        :nth-child(4){
+                            position:absolute;
+                            top:0px;
+                            right:0px;
+                            padding:10px 50px;
+                            color:white;
+                            font-size: 16px;
+                            z-index:9;
+                            cursor: pointer;
+                        }
+                    }
+                   
+                    .lslider{
+                        flex:5;
+                        height:100%;
+                       
+                       div{
+                        height:100%;
+                        padding-right: 30px;
+                         img{
+                            height:100%;
+                            width:100%;
+                            border-radius: 10px;
+
+                            &:hover{
+                                
+                                    cursor: pointer;
+                                
+                            }
+                        }
+                       }
+                    }
+                    .rslider{
+                        flex:1;
+                        display: flex;
+                        flex-direction: column;
+                        
+                        justify-content: space-between;
+                        img{
+                            height:100px;
+                            width:100%;
+                            border-radius: 10px;
+
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .listitembottom{
+                display:flex;
+                flex-direction:column;
+                gap:26px;
+
+                .bcon1{
+                    display:flex;
+                    justify-content:space-between;
+
+                    .blcon1{
+                        display:flex;
+                        flex-direction:column;
+                        gap:20px;
+                        :nth-child(1){
+                            font-size:24px;
+                            font-weight:600;
+                        }
+                        :nth-child(2){
+                            display:flex;
+                            gap:5px;
+                            align-items: center;
+                          
+                            font-size:14px;
+                            color:#888;
+                            :nth-child(1){
+                                height:16px;
+                                width:16px;
+                                display:flex;
+                                align-items: center;
+                            }
+                        }
+                        :nth-child(3){
+                            font-size:16px;
+                width:max-content;
+                padding:10px;
+                font-weight: 300;
+                background-color: rgba(254,205,81,0.438);
+                        }
+                    }
+
+                    .brcon1{
+                        display:flex;
+                        flex-direction:column;
+                        background-color:rgba(254,205,81,0.209);
+                        padding:0px 30px;
+                        align-items: center;
+                        justify-content: center;
+                        :nth-child(1){
+                            img{
+                                border-radius: 50%;
+                                height:60px;
+                                width:60px;
+                                object-fit: cover;
+                            }
+                        }
+                        :nth-child(2){
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .listitemrcon{
+        height:100%;
+        flex:2;
+        background-color: #fcf5f3;
+        .listitemrconwrap{
+            padding:0px 20px 20px 20px;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .rpart1tit,.rpart2tit,.rpart3tit,.rpart4tit{
+            font-size:20px;
+            font-weight: 600;
+        }
+
+        .rpart1{
+            display:flex;
+            flex-direction: column;
+            
+            gap:5px;
+
+            .rpartits{
+                display:flex;
+            flex-direction: column;
+            
+            gap:5px;
+                background-color: white;
+            padding:5px 15px;
+            
+                :nth-child(1),:nth-child(2),:nth-child(3){
+                display:flex;
+                
+                gap:5px;
+                :nth-child(1){
+                    display: flex;
+                    align-items: center;
+                }
+                :nth-child(2){
+                    display:flex;
+                    flex-direction: column;
+                    
+                    :nth-child(1){
+                        font-size:16px;
+                        font-weight:600;
+                    }
+                }
+            }
+            
+            }
+        }
+
+        .rpart2,.rpart3{
+             display:flex;
+            flex-direction: column;
+            
+            gap:5px;
+
+           
+        }
+         .rpart2its{
+            display:flex;
+            justify-content: space-between;
+            .rs1,.rs2,.rs3{
+                display:flex;
+                background-color: white;
+                padding:5px 15px;
+                align-items: center;
+                gap:5px;
+            }
+         }
+         
+         .rpart3its{
+            display:flex;
+            justify-content: space-between;
+            background-color: white;
+            
+            :nth-child(1),:nth-child(2),:nth-child(3){
+                
+                    :nth-child(2){
+                        :nth-child(1){
+                            font-size: 16px;
+                        font-weight: 600;
+                        }
+                    }
+                
+            }
+            .ps1,.ps2,.ps3{
+                display:flex;
+                background-color: white;
+                padding:5px 15px;
+                align-items: center;
+                gap:5px;
+                
+
+                :nth-child(2){
+                    display:flex;
+                    flex-direction: column;
+                }
+            }
+         }
+
+         .rpart4{
+            height:23vh;
+            .mapv{
+                height:100%;
+                width:100%;
+                z-index:4;
+                &.mapnv{
+                display:none;
+            }
+            }
+            
+         }
+
+         .rpart5{
+            margin-top: 20px;
+            display:flex;
+            justify-content: space-between;
+            .msgsend{
+                display: flex;
+                flex-direction: column;
+              
+                height:6vh;
+                width:8vw;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                :nth-child(2){
+                    padding-left: 8px;
+                }
+            }
+            .savepost{
+                display: flex;
+                flex-direction: column;
+                
+                height:6vh;
+                width:8vw;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                
+                &.rmv{
+                    background-color: #fece51;}
+
+                &.addv{
+                    background-color: white;
+                }
+                :nth-child(2){
+                    padding: 15px;
+                }
+            }
+         }
+    }
+}
+.utilitycls{
+    display:flex;
+}

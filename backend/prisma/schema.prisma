@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+ 
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  email String @unique
+  password String
+  photoimg String?
+  isAdmin Boolean @default(false)
+  createdAt DateTime @default(now())
+  posts Post[]
+  savedposts Savedpost[]
+  chats Chat[] @relation(fields:[chatids],references:[id])
+  chatids String[] @db.ObjectId
+}
+
+model Post{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  title String 
+  price Int 
+  city String 
+  address String 
+  latitude String 
+  longitude String 
+  bedroom Int 
+  bathroom Int
+  images String[]
+  type type 
+  property property 
+  createdAt DateTime @default(now())
+  user User @relation(fields:[userid],references:[id])
+  userid String  @db.ObjectId
+  postdetail Postdetail?
+  savedposts Savedpost[]
+  
+}
+
+enum type{
+  buy 
+  rent
+}
+enum property{
+apartment
+house
+condo 
+land
+}
+
+model Postdetail{
+  id String @id @default(auto()) @map("_id") @db.ObjectId 
+  desc String
+  utility String 
+  petpolicy String 
+  incomepolicy String 
+  size Int
+  schooldist Int 
+  busdist Int 
+  restaurantdist Int 
+  post Post @relation(fields:[postid],references:[id])
+  postid String @unique @db.ObjectId
+}
+
+model Savedpost{
+  id String @id @default(auto()) @map("_id") @db.ObjectId 
+  post Post @relation(fields:[postid],references: [id])
+  postid String @db.ObjectId 
+
+  user User @relation(fields:[userid],references:[id])
+  userid String @db.ObjectId
+
+  createdAt DateTime @default(now())
+
+  @@unique([postid,userid],name:"userid_postid")
+}
+
+model Chat{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  users User[] @relation(fields:[userids],references:[id])
+  userids String[] @db.ObjectId
+  seenby String[] @db.ObjectId
+  lastmsg String?
+  createdAt DateTime @default(now())
+  messages Message[]
+}
+
+model Message{
+  id String @id @default(auto()) @map("_id") @db.ObjectId 
+  content String 
+  userid String @db.ObjectId
+  chat Chat @relation(fields:[chatid],references:[id])
+  chatid String @db.ObjectId
+  createdAt DateTime @default(now())
+}
